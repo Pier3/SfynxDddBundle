@@ -39,7 +39,13 @@ services:
     #
     project.dddcontext.listener.kernel.request.dynamic_database:
         class: %project.dddcontext.listener.kernel.request.dynamic_database_orm.class%
-        arguments: [%database_type%, %database_multitenant_path_file%, @doctrine.dbal.default_connection]
+        arguments:
+          - null
+          - %database_type%
+          - %multitenant_usedb%
+          - %multitenant_cachedir%
+          - %multitenant_filepath%
+          - @doctrine.dbal.default_connection
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 

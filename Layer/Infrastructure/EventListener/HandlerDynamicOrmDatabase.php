@@ -16,8 +16,6 @@ class HandlerDynamicOrmDatabase
     protected $oManager;
     protected $sTenantCacheDir;
     protected $sDefaultTenantFilePath;
-
-    /* @var Connection */
     protected $oConnection;
 
     public function __construct(ManagerInterface $oManager, $sDatabaseType, $bUseDb, $sTenantCacheDir, $sDefaultTenantFilePath, Connection $oConnection)
